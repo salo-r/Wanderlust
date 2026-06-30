@@ -41,7 +41,7 @@ module.exports.showListing = async (req, res) => {
 module.exports.createListing = async (req, res, next) => {
 
   let geoCodingResponse = await geoCodingClient.forwardGeocode({
-    query: res.body.listing.location,
+    query: req.body.listing.location,
     limit: 1
   }).send();
 
